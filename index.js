@@ -4,10 +4,9 @@ function takeANumber(line, name) {
 }
 
 function nowServing(line) {
-  if(!line.length) {
-    return "There is nobody waiting to be served!"
-  }
-  return `Currently serving ${line.shift()}.`
+  return !line.length
+  ? "There is nobody waiting to be served!"
+  :`Currently serving ${line.shift()}.`
 }
 
 function currentLine (line) {
@@ -15,7 +14,7 @@ function currentLine (line) {
     return "The line is currently empty."
   }
   const numbersAndNames = []
-  for (let i = 0, l = line.length; i < l; i++) {
+  for (let i = 0, i < line.length ; i++) {
     numbersAndNames.push(`${i + 1}. ${line[i]}`)
   }
   return `The line is currently: ${numbersAndNames.join(', ')}`
